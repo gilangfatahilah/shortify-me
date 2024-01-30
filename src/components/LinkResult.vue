@@ -1,7 +1,9 @@
 <template>
   <div>
-    <div v-if="loading" class="noData">Loading...</div>
-    <div v-else-if="error" class="noData">Something went wrong :(</div>
+    <div v-if="loading" class="noData"><div class="loader"></div></div>
+    <div v-else-if="error" class="noData text-2xl text-center">
+      Something went wrong :(
+    </div>
     <div
       v-else-if="shortenLink"
       class="result flex flex-row gap-2 items-center"
@@ -101,3 +103,30 @@ watch(
   }
 );
 </script>
+
+<style scoped>
+.loader {
+  width: 15px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  animation: l5 1s infinite linear alternate;
+}
+@keyframes l5 {
+  0% {
+    box-shadow: 20px 0 #000, -20px 0 #0002;
+    background: #000;
+  }
+  33% {
+    box-shadow: 20px 0 #000, -20px 0 #0002;
+    background: #0002;
+  }
+  66% {
+    box-shadow: 20px 0 #0002, -20px 0 #000;
+    background: #0002;
+  }
+  100% {
+    box-shadow: 20px 0 #0002, -20px 0 #000;
+    background: #000;
+  }
+}
+</style>
