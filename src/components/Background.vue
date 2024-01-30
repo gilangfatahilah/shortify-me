@@ -38,7 +38,7 @@
   left: 0;
   margin: 0;
   padding: 0;
-  background: #4e54c8;
+  background: #0b666a;
   overflow: hidden;
   z-index: -1;
 }
